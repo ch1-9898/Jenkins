@@ -1,0 +1,14 @@
+package com;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+public class TestApp {
+
+	
+	@BeforeEach
+	public void setup() {
+		System.out.println("test의 setup실행");
+	}
+}

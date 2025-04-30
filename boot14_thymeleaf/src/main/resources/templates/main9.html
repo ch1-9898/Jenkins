@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>조각모음 : th:fragment, th:insert, th:replace, </h1>
+<!-- 
+	th:insert 가장 간단합니다. 지정된 조각을 호스트 태그의 본문으로 간단히 삽입합니다.
+	th:replace실제로 호스트 태그를 지정된 조각으로 바꿉니다 . 
+-->
+=========================================
+<h3>top포함: th:insert</h3>
+<div th:insert="fragments/include::menu"></div>
+
+<h3>copy포함: th:insert</h3>
+<div th:insert="fragments/include::copy"></div>
+
+<h3>copy변경 : th:replace, 태그 자체가 교체됨 </h3>
+<div th:replace="fragments/include::xyz">안녕하세요</div>
+====================================
+</body>
+</html>

@@ -1,0 +1,28 @@
+package com.controller;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.service.GreetService;
+
+@Controller
+public class HelloControllerTest {
+
+	@Autowired
+	GreetService service;
+	@Autowired
+	private MockMvc mockMvc;//Requset, Response 정보 저장객체
+	
+	@BeforeEach
+	public void setUp() {
+		System.out.println("setup 실행된 ==== "+service);
+	}
+	
+	@Test
+	public void mainTest() throws Exception{
+		mockMvc.perform(get("/main"))
+	}
+}

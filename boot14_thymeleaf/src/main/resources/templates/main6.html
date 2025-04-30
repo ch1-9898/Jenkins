@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>main6.html 리터럴(literal): ${..}</h1>
+<h3>1.문자열리터럴</h3>
+<p th:text="'문자열을 넣기'">template file</p>
+
+<h3>2.숫자 리터럴</h3>
+<p>this year is <span th:text="2013">1111</span> .</p>
+<p>In two years, it will be  <span th:text="2013+2">1111</span> .</p>
+
+<h3>3. 불린 리터럴: 태그의 사용여부 결정 </h3>
+<div th:if="${user.username}=='홍길동'">이름은 홍길동(thymeleaf가 처리)</div>
+<div th:if="${user.username=='홍'}">이름은 홍길동 (SpringEl이 처리 )</div>  <!-- 랜더링 안됨  -->
+<div th:if="${user.getUsername()} !='aaa'">이름은 aaa 아님</div>
+<hr>
+<div th:if="${user.age}==20">나이는 20살 (thymeleaf가 처리)</div>
+<div th:if="${user.age==20}">나이는 20살 (spring El 처리)</div>
+
+<h3>4. null 리터럴</h3>
+<div th:if="${user.username} ==null ">null 문자 사용 가능1</div><!-- 랜더링 안됨  -->
+<div th:if="${user.username !=null} ">null 문자 사용 가능2</div>
+
+<h3>5. 텍스트 추가 및 리터럴 대체 </h3>
+<div th:text="'the name of the user is '+ ${user.username}">아무개</div>
+<div th:text="|the name of the user is ${user.getUsername()} Hello |">리터럴대체</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

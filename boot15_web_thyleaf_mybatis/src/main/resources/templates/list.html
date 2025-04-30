@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:align="center">
+<h1>게시글 목록</h1>
+<table border="1" th:align="center">
+  <tr>
+    <td>부서번호</td>
+    <td>부서명</td>
+    <td>부서위치</td>
+    <td>삭제</td>
+    <td>수정</td>
+    <td>상세보기</td>
+  </tr>
+<!-- <c:forEach var="dept" items="${allData}"> -->
+<tr th:each="dept : ${allData}">
+	<td th:text="${dept.deptno}"> </td>
+	<td th:text="${dept.dname}"> </td>
+	<td th:text="${dept.loc}"> </td>
+	<td><a th:href="@{deptDelete(deptno=${dept.deptno})}" th:text="'삭제leaf'"></a> </td>
+	<td><a th:href="@{deptUpdateForm(deptno=${dept.deptno})}" th:text="'수정leaf'"></a> </td>
+	<td><a th:href="@{deptRetrive(deptno=${dept.deptno})}" th:text="'상세보기leaf'"></a> </td>
+</tr>
+<!-- </c:forEach> -->
+</table><br>
+<center><a th:href="@{insertForm}" th:text="'등록화면leaf'"></a></center>
+</body>
+</html>

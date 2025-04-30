@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>main5.html  @{}</h1>
+<a href="http://localhost:8090/app/a55?username=홍길동&age=20">홍길동/20</a><br>
+<a href="a55?username=이순신&age=10">이순신/10</a><br>
+<hr>
+<a th:href="@{http://localhost:8090/app/a55(username=홍길동, age=20)}">홍길동/20</a><br>
+<a th:href="@{/a55(username=세종, age=40)}">세종/40</a><br>
+<a th:href="@{/a55?username=세종&age=40}">세종/40</a>
+
+
+
+
+</body>
+</html>

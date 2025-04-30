@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\eclipse_17version\boot_jdk17_stu\12_SPRINGBOOT\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3367594469.index
+1142730138.index
+718867085.index
+2083595104.index
+3161289559.index
+1976753076.index
